@@ -15,7 +15,7 @@ export default function DashboardSideBar() {
       <div className="flex h-full w-full max-h-screen flex-col gap-2 ">
         <div className="flex h-[55px] items-center justify-between border-b px-3 w-[60vw]">
           <Link className="flex items-center gap-2 font-semibold ml-1" href="/">
-            <span className="">Nextjs Starter Kit</span>
+            <span className="">Dashboard</span>
           </Link>
           <div className="flex gap-10">
             <Link href="/dashboard/launches">
