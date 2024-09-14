@@ -16,7 +16,7 @@ import { ReactNode } from "react";
 export default function DashboardTopNav({ children }: { children: ReactNode }) {
   return (
     <div className="w-full">
-      <header className="flex h-14 lg:h-[55px] items-center justify-between gap-4 border-b px-4">
+      <header className="flex h-16 lg:h-[55px] items-center justify-between gap-4 border-b py-5">
         <div className="flex items-center gap-4">
           <Dialog>
             <SheetTrigger className="min-[1024px]:hidden p-2 transition">
@@ -25,7 +25,7 @@ export default function DashboardTopNav({ children }: { children: ReactNode }) {
             <SheetContent side="left">
               <SheetHeader>
                 <Link href="/">
-                  <SheetTitle>Nextjs Starter Kit</SheetTitle>
+                  <SheetTitle>chainhunt</SheetTitle>
                 </Link>
               </SheetHeader>
               <div className="flex flex-col space-y-3 mt-4">
