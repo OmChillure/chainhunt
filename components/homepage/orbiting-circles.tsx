@@ -24,7 +24,7 @@ export function OrbitingCirclesComponent() {
         delay={10}
         radius={80}
       >
-        <Icons.tailwind />
+        <Icons.rust />
       </OrbitingCircles>
 
       {/* Outer Circles (reverse) */}
@@ -43,7 +43,7 @@ export function OrbitingCirclesComponent() {
         duration={20}
         delay={20}
       >
-        <Icons.supabase />
+        <Icons.solana />
       </OrbitingCircles>
     </div>
   );
@@ -56,15 +56,15 @@ const Icons = {
       height={100}
     />
   ),
-  tailwind: (props: IconProps) => (
-    <Image src="https://utfs.io/f/666774c0-dc3a-4d5a-84b7-cc96e682db61-bhgw4o.png" alt=""
+  rust: (props: IconProps) => (
+    <Image src="https://utfs.io/f/Ejk0YhBR15NVSXs8I06hAfm5FzOrbdHgTjxEi3YyKIC7k469" alt=""
       width={100}
       height={100}
     // className="bg-black p-2 rounded"
     />
   ),
-  supabase: (props: IconProps) => (
-    <Image src="https://utfs.io/f/c62a5d13-91e4-476f-9d36-786d9995c97f-rqpuxo.png" alt=""
+  solana: (props: IconProps) => (
+    <Image src="https://utfs.io/f/Ejk0YhBR15NVSlwIco6hAfm5FzOrbdHgTjxEi3YyKIC7k469" alt=""
       width={100}
       height={100}
     // className="bg-black p-2 rounded"

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from 'next/link';
 import * as React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@clerk/nextjs";
 import { Dialog, DialogClose } from "@radix-ui/react-dialog";
 import { WalletButton } from '../solana/solana-provider';
+import { useIsWalletConnected } from '../solana/solana-provider';
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -33,11 +34,7 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export default function NavBar() {
-    // let userId = null;
-    // if (config?.auth?.enabled) {
-    //     const user = useAuth();
-    //     userId = user?.userId;
-    // }
+    const isWalletConnected = useIsWalletConnected();
 
     return (
         <div className="flex min-w-full fixed justify-between p-2 border-b z-10 dark:bg-black dark:bg-opacity-50 bg-white">
@@ -58,13 +55,15 @@ export default function NavBar() {
                                     <Button variant="outline" className="w-full">Home</Button>
                                 </Link>
                             </DialogClose>
-                            <DialogClose asChild>
-                                <Link href="/dashboard" legacyBehavior passHref className="cursor-pointer">
-                                    <Button variant="outline">
-                                        Dashboard
-                                    </Button>
-                                </Link>
-                            </DialogClose>
+                            {isWalletConnected && (
+                                <DialogClose asChild>
+                                    <Link href="/dashboard" legacyBehavior passHref className="cursor-pointer">
+                                        <Button variant="outline">
+                                            Dashboard
+                                        </Button>
+                                    </Link>
+                                </DialogClose>
+                            )}
                         </div>
                     </SheetContent>
                 </Dialog>
@@ -96,17 +95,18 @@ export default function NavBar() {
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
-                    <NavigationMenuItem className="max-[825px]:hidden">
-                        <Link href="/dashboard" legacyBehavior passHref>
-                            <Button variant="ghost">
-                                Dashboard
-                            </Button>
-                        </Link>
-                    </NavigationMenuItem>
+                    {isWalletConnected && (
+                        <NavigationMenuItem className="max-[825px]:hidden">
+                            <Link href="/dashboard" legacyBehavior passHref>
+                                <Button variant="ghost">
+                                    Dashboard
+                                </Button>
+                            </Link>
+                        </NavigationMenuItem>
+                    )}
                 </NavigationMenuList>
             </NavigationMenu>
             <div className="flex items-center gap-2 max-[825px]:hidden">
-                <UserProfile />
                 <ModeToggle />
                 <WalletButton />
             </div>
@@ -114,28 +114,27 @@ export default function NavBar() {
     );
 }
 
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-    return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    );
-});
+const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
+    ({ className, title, children, ...props }, ref) => {
+        return (
+            <li>
+                <NavigationMenuLink asChild>
+                    <a
+                        ref={ref}
+                        className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                            className
+                        )}
+                        {...props}
+                    >
+                        <div className="text-sm font-medium leading-none">{title}</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            {children}
+                        </p>
+                    </a>
+                </NavigationMenuLink>
+            </li>
+        );
+    }
+);
 ListItem.displayName = "ListItem";
