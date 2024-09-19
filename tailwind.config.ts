@@ -15,7 +15,6 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{ts,tsx}",
   ],
-  // Enabling dark mode
   darkMode: "class", // Assuming you want to enable dark mode based on the class strategy
   theme: {
     // Merging container configuration from the second file
@@ -27,13 +26,11 @@ const config: Config = {
       },
     },
     extend: {
-      // Merging backgroundImage from the first file
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      // Merging colors, borderRadius, keyframes, and animation from the second file
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -152,8 +149,9 @@ const config: Config = {
       },
     },
   },
-  // Merging plugins, adding any unique plugins from both files
+
   plugins: [
+    addVariablesForColors,
     require("tailwindcss-animate"), // Assuming require is resolved in your environment
     // Add other unique plugins here
     function ({ matchUtilities, theme }: any) {
@@ -180,5 +178,16 @@ const config: Config = {
     },
   ],
 };
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
 
 export default config;

@@ -57,17 +57,18 @@ export default function NavBar() {
                             </DialogClose>
                             {isWalletConnected && (
                                 <DialogClose asChild>
-                                    <Link href="/dashboard" legacyBehavior passHref className="cursor-pointer">
+                                    <Link href="/dashboard/products" legacyBehavior passHref className="cursor-pointer">
                                         <Button variant="outline">
                                             Dashboard
                                         </Button>
                                     </Link>
                                 </DialogClose>
                             )}
+                            <ModeToggle />
                         </div>
                     </SheetContent>
                 </Dialog>
-                <ModeToggle />
+                <WalletButton />
             </div>
             <NavigationMenu>
                 <NavigationMenuList className="max-[825px]:hidden flex gap-3 w-[100%] justify-between">
@@ -97,7 +98,7 @@ export default function NavBar() {
                     </NavigationMenuItem>
                     {isWalletConnected && (
                         <NavigationMenuItem className="max-[825px]:hidden">
-                            <Link href="/dashboard" legacyBehavior passHref>
+                            <Link href="/dashboard/products" legacyBehavior passHref>
                                 <Button variant="ghost">
                                     Dashboard
                                 </Button>
