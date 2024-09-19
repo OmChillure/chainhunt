@@ -22,7 +22,7 @@ export default function News() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://newsapi.org/v2/everything?q=solana&apiKey=93ea1e7f079041f29df8b14994e07526');
+        const response = await fetch(`https://newsapi.org/v2/everything?q=solana&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`);
         const data = await response.json();
         setArticles(data.articles);
       } catch (err) {
