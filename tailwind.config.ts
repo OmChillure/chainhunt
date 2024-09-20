@@ -17,7 +17,6 @@ const config: Config = {
   ],
   darkMode: "class", // Assuming you want to enable dark mode based on the class strategy
   theme: {
-    // Merging container configuration from the second file
     container: {
       center: true,
       padding: "2rem",
