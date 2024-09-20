@@ -9,11 +9,12 @@ import ModeToggle from "../mode-toggle";
 import { BlocksIcon } from "lucide-react";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import config from "@/config";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 import { useAuth } from "@clerk/nextjs";
 import { Dialog, DialogClose } from "@radix-ui/react-dialog";
 import { WalletButton } from '../solana/solana-provider';
 import { useIsWalletConnected } from '../solana/solana-provider';
+import Image from 'next/image';
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -71,31 +72,14 @@ export default function NavBar() {
                 <WalletButton />
             </div>
             <NavigationMenu>
-                <NavigationMenuList className="max-[825px]:hidden flex gap-3 w-[100%] justify-between">
+                {/* <NavigationMenuList className="max-[825px]:hidden flex gap-3 w-[100%] justify-between">
                     <Link href="/" className="pl-2 flex items-center" aria-label="Home">
                         <BlocksIcon aria-hidden="true" />
                         <span className="sr-only">Home</span>
                     </Link>
-                </NavigationMenuList>
+                </NavigationMenuList> */}
                 <NavigationMenuList>
-                    <NavigationMenuItem className="max-[825px]:hidden ml-5">
-                        <NavigationMenuTrigger className="dark:bg-black dark:bg-opacity-50">
-                            Features
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <ul className="flex flex-col w-[400px] gap-3 p-4 lg:w-[500px]">
-                                {components.map((component) => (
-                                    <ListItem
-                                        key={component.title}
-                                        title={component.title}
-                                        href={component.href}
-                                    >
-                                        {component.description}
-                                    </ListItem>
-                                ))}
-                            </ul>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
+                    <Image src="/chains.png" alt="ChainHunt" width={160} height={40} className='mt-1' />
                     {isWalletConnected && (
                         <NavigationMenuItem className="max-[825px]:hidden">
                             <Link href="/dashboard/products" legacyBehavior passHref>

@@ -4,6 +4,7 @@ import { WalletButton } from "@/components/solana/solana-provider";
 import ModeToggle from "@/components/mode-toggle";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavBar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -14,10 +15,10 @@ export default function NavBar() {
   };
 
   return (
-    <div className="flex justify-between items-center p-4">
-      <a href="/" className="ml-14">
-        Dashboard
-      </a>
+    <div className="flex justify-between items-center p-3">
+      <Link href={'/'}>
+        <Image src="/chains.png" alt="ChainHunt" width={180} height={100} />
+      </Link>
       <div className="flex space-x-6">
         <a href="/dashboard/products" className="">
           Products

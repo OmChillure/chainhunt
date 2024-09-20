@@ -82,7 +82,7 @@ function AllProducts() {
       <main className="p-6">
         <div className="flex justify-between items-center mb-6">
           <Button>
-            <Link href="/dashboard/launches/new">New</Link>
+            <Link href="/dashboard/products/new">New</Link>
           </Button>
           <input
             type="text"
@@ -109,7 +109,7 @@ function AllProducts() {
               >
                 <div className="p-2">
                   <Link
-                    href={`/dashboard/launches/${encodeURIComponent(
+                    href={`/dashboard/products/${encodeURIComponent(
                       product.title
                     )}`}
                     key={index}
