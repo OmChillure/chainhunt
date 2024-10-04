@@ -3,7 +3,7 @@ import AllProducts from './_components/product'
 
 function page() {
   return (
-    <div>
+    <div className='overflow-x-hidden overflow-y-hidden'>
       <AllProducts />
     </div>
   )

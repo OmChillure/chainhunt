@@ -45,9 +45,8 @@ function AllProducts() {
   const fetchAllProducts = async () => {
     if (!anchorWallet) return;
 
-    // Instantiate PublicKey inside the useEffect
     const programId = new PublicKey(
-      "48Hky5sZbmNEHy7sB3MkCzxcrhMUTyTXKenQEftd2VYc"
+      "HZWY8cL6EfYkx8BMCTv9KtdekTq1n1h1x7p9oMP1pMiG"
     );
 
     const provider = new AnchorProvider(connection, anchorWallet, {});
@@ -78,7 +77,7 @@ function AllProducts() {
   );
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <main className="p-6">
         <div className="flex justify-between items-center mb-6">
           <Button>
@@ -118,7 +117,7 @@ function AllProducts() {
                       <img
                         src={`https://gateway.pinata.cloud/ipfs/${product.ipfsHash}`}
                         alt={product.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover" // Makes image responsive
                       />
                     </div>
                   </Link>

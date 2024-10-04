@@ -26,9 +26,9 @@ export default function Footer() {
                         <div className="mt-8 space-y-4 lg:mt-0">
 
                             <div>
-                                <h3 className="text-2xl font-medium">This is a fake newsletter title</h3>
+                                <h3 className="text-2xl font-medium">This is a newsletter title</h3>
                                 <p className="mt-4 max-w-lg  ">
-                                    This is not a real newsletter email input. This is for you to build upon
+                                    This is a newsletter email input. This is for you to build upon
                                 </p>
                             </div>
                             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col border rounded-xl p-4 gap-3 mt-6 w-full">

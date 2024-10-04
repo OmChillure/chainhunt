@@ -50,8 +50,8 @@ export default function News() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center h-screen p-4">
-        <Card className="w-full max-w-4xl">
+      <div className="flex items-center justify-center h-screen p-4 overflow-hidden">
+        <Card className="w-full max-w-4xl overflow-hidden">
           <CardHeader>
             <CardTitle className="text-red-500">Error</CardTitle>
           </CardHeader>

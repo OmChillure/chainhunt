@@ -34,7 +34,7 @@ export default function HeroSection() {
           <ChevronRight className="ml-1 size-4 text-gray-500" />
         </AnimatedGradientText>
         <h1
-          className={`${TITLE_TAILWIND_CLASS} text-[50px] mt-14 scroll-m-20 font-semibold tracking-tight text-center max-w-[1120px] bg-gradient-to-b dark:text-white`}
+          className={`${TITLE_TAILWIND_CLASS} text-[50px] mt-10 scroll-m-20 font-semibold tracking-tight text-center max-w-[1120px] bg-gradient-to-b dark:text-white`}
         >
           <span className="bg-gradient-to-r from-[#c9184a] via-[#ff4d6d] to-[#ff758f] bg-clip-text text-transparent">
             Chainhunt:

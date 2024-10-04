@@ -8,7 +8,7 @@ import idl from '@/lib/idl.json';
 import { upload } from '@/actions/page';
 import { FileUpload } from '../_components/file-upload';
 
-const programId = new PublicKey('48Hky5sZbmNEHy7sB3MkCzxcrhMUTyTXKenQEftd2VYc');
+const programId = new PublicKey('HZWY8cL6EfYkx8BMCTv9KtdekTq1n1h1x7p9oMP1pMiG');
 const feeReceiverAddress = new PublicKey("CovFLcdngBTA2N9jbd3kRuid94HzSzF2NJ5Y54bAJSNd");
 
 function CreateProductEntry() {
