@@ -39,7 +39,7 @@ export default function HeroSection() {
           <span className="bg-gradient-to-r from-[#c9184a] via-[#ff4d6d] to-[#ff758f] bg-clip-text text-transparent">
             Chainhunt:
           </span>{" "}
-          Solana product hunt
+          Decentralized product hunt
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-500 text-center text-xl mt-6 dark:text-gray-400">
           The onestop solution to hunt and upvote proucts build on Solana.
