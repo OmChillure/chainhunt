@@ -153,8 +153,8 @@ const ProductDetail = () => {
                     </div>
                   </div>
                   <p className="mt-4 text-sm leading-loose">
-                    "I absolutely love this product! The fabric is so soft and
-                    comfortable, and the design is truly unique."
+                    I absolutely love this product The fabric is so soft and
+                    comfortable, and the design is truly unique.
                   </p>
                 </Card>
                 <div className="flex justify-center">

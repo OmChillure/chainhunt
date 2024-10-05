@@ -33,7 +33,7 @@ export default function SideBySide() {
                 Chainhunt: A degen product hunt
               </p>
               <p className="mt-6 leading-8 text-gray-600 dark:text-gray-400">
-                Accelerate your product's with this powerful SaaS and earn more.
+                Accelerate your products with this powerful SaaS and earn more.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
